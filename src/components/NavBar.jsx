@@ -11,9 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { useState } from "react";
 import { CartWidget } from "./CartWidget";
-import { theme } from "./ui/styles";
-
-
+import { theme } from "../ui/styles";
 
 const pages = ["Productos", "Nosotros", "Contacto"];
 
@@ -29,8 +27,7 @@ export const NavBar = () => {
   };
 
   return (
-    
-    <AppBar  sx={theme.navigationBar} position="static">
+    <AppBar sx={theme.navigationBar} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -124,6 +121,5 @@ export const NavBar = () => {
         </Toolbar>
       </Container>
     </AppBar>
-    
   );
 };
