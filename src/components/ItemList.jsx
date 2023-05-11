@@ -16,6 +16,8 @@ export const ItemList = () => {
             key={producto.id}
             title={producto.title}
             description={producto.description}
+            image={producto.image}
+            count={producto.rating.count}
           />
         
       </>

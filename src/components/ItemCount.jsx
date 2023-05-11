@@ -1,14 +1,18 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 
-import { Button, Container, Typography } from "@mui/material";
+import { Button,Typography } from "@mui/material";
 import AddCircleSharpIcon from "@mui/icons-material/AddCircleSharp";
 import RemoveCircleSharpIcon from "@mui/icons-material/RemoveCircleSharp";
 import { useCounter } from "../hooks/useCounter";
 import { theme } from "../ui/styles";
 
-export const ItemCount = () => {
-  const { counter, increment, decrement, reset } = useCounter();
+export const ItemCount = ({count}) => {
+  
+  const { counter, increment, decrement, reset } = useCounter({initialvalue:1,stock:count});
+
+  
+ 
 
   return (
     <Box
@@ -25,7 +29,6 @@ export const ItemCount = () => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-around",
-
           width: 200,
         }}
       >
@@ -40,7 +43,7 @@ export const ItemCount = () => {
           <AddCircleSharpIcon sx={theme.Icon} />
         </Button>
       </Box>
-      <Button sx={theme.buttonAddCart} variant="contained">
+      <Button  sx={theme.buttonAddCart} variant="contained">
         {" "}
         Agregar al carrito{" "}
       </Button>

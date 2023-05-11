@@ -5,26 +5,30 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import img from '../assets/contemplative-reptile.jpg'
+import { ItemCount } from './ItemCount';
 
-export const Item=({title,description}) =>{
+export const Item=({image,title,description,count}) =>{
   return (
-    <Card  sx={{ maxWidth: 345 }}>
+    <Card  sx={{ m:5 ,maxWidth: 250,height:600 }}>
       <CardMedia
-        sx={{ height: 140 }}
-        image={img}
-        title="green iguana"
+        component="img"
+        sx={{ width: 240 ,height: 240 ,backgroundSize:'contain'}}
+        image={image}
+        title={title}
+       
       />
-      <CardContent>
+      <CardContent >
+    
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {description}
+         cantidad : {count}
         </Typography>
+        <ItemCount count={count}/>
       </CardContent>
-      <CardActions>
-        <Button size="small">Abrir Descripcion</Button>
+      <CardActions sx={{display:'flex',justifyContent:'center'}}>
+        <Button variant='contained' size="small">Abrir Descripcion</Button>
       </CardActions>
     </Card>
   );
