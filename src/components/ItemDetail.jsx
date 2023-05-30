@@ -31,7 +31,7 @@ export const ItemDetail=({imagen,nombre,descripcion,cantidad,precio}) =>{
         <Typography variant="body2" color="text.secondary">
          precio : {precio}
         </Typography>
-        <ItemCount count={cantidad} onAdd={(cantidad)=>console.log(`cantidad agregada ${cantidad} ` )} />
+        <ItemCount count={cantidad}  />
       </CardContent>
       
     </Card>

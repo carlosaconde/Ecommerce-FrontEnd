@@ -43,9 +43,8 @@ export const ItemCount = ({count}) => {
           <AddCircleSharpIcon sx={theme.Icon} />
         </Button>
       </Box>
-      <Button  sx={theme.buttonAddCart} variant="contained">
-        {" "}
-        Agregar al carrito{" "}
+      <Button onClick={()=>console.log(`cantidad agregada ${counter} ` )} sx={theme.buttonAddCart} variant="contained">
+        Agregar al carrito
       </Button>
     </Box>
   );
