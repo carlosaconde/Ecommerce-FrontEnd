@@ -1,42 +1,39 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Link, Link as RouterLink } from "react-router-dom";
+import { ItemCount } from './ItemCount';
 
-export const Item=({id,image,title,count,price}) =>{
+export const ItemDetail=({imagen,nombre,descripcion,cantidad,precio}) =>{
+  
+  
   return (
-    <Card  sx={{ mt:3,maxWidth: 250,height:550 }}>
+    <Card  sx={{ m:5 ,maxWidth: 250,height:600 }}>
       <CardMedia
         component="img"
         sx={{ width: 240 ,height: 240 ,backgroundSize:'contain'}}
-        image={image}
-        title={title}
+        image={imagen}
+        title={nombre}
        
       />
       <CardContent >
     
         <Typography gutterBottom variant="h5" component="div">
-          {title}
+          {nombre}
+        </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+          {descripcion}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-         cantidad : {count}
+         cantidad : {cantidad}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-         precio : ${price} 
+         precio : {precio}
         </Typography>
-       
+        <ItemCount count={cantidad} onAdd={(cantidad)=>console.log(`cantidad agregada ${cantidad} ` )} />
       </CardContent>
-      <CardActions sx={{display:'flex',justifyContent:'center'}}>
-        <Button variant='contained' size="small">
-        <Link component={RouterLink} to={`/item/${id}`}>
-                  ver detalle
-                </Link>
-        </Button>
-      </CardActions>
+      
     </Card>
   );
 }

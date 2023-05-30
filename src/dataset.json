@@ -1,0 +1,76 @@
+{
+    "productos": [
+      {
+        "id":1,
+        "nombre": "Tetera de cerámica",
+        "descripcion": "Tetera de cerámica hecha a mano, capacidad de 1 litro.",
+        "precio": 29.99,
+        "imagen": "src/assets/img/Tetera-de-ceramica.jpeg",
+        "categoria":"vajilla"
+      },
+      {
+        "id":2,
+        "nombre": "Set de utensilios de cocina",
+        "descripcion": "Set de 6 utensilios de cocina antiadherentes, incluye espátulas y cucharones.",
+        "precio": 19.99,
+        "imagen": "",
+        "categoria":"utensilios"
+      },
+      {
+        "id":3,
+        "nombre": "Juego de copas de vino",
+        "descripcion": "Juego de 4 copas de vino de cristal, capacidad de 350 ml.",
+        "precio": 39.99,
+        "imagen": "",
+        "categoria":"vajilla"
+      },
+      {
+        "id":4,
+        "nombre": "Cuchillos de chef",
+        "descripcion": "Set de 3 cuchillos de chef de acero inoxidable, incluye cuchillo de pan, cuchillo de carne y cuchillo multiusos.",
+        "precio": 49.99,
+        "imagen": "",
+        "categoria":"utensilios"
+    },
+      {
+        "id":5,
+        "nombre": "Bandeja de servir de madera",
+        "descripcion": "Bandeja de servir de madera de pino, tamaño 40x30 cm.",
+        "precio": 15.99,
+        "imagen": "",
+        "categoria":"vajilla"
+    },
+      {
+        "id":6,
+        "nombre": "Juego de tazas de café",
+        "descripcion": "Juego de 6 tazas de café de porcelana con platillos a juego.",
+        "precio": 24.99,
+        "imagen": "",
+        "categoria":"vajilla"
+      },
+      {
+        "id":7,
+        "nombre": "Exprimidor de cítricos",
+        "descripcion": "Exprimidor manual de cítricos, fácil de usar y limpiar.",
+        "precio": 9.99,
+        "imagen": "",
+        "categoria":"artefactos"
+      },
+      {
+        "id":8,
+        "nombre": "Set de recipientes de almacenamiento",
+        "descripcion": "Set de 10 recipientes de almacenamiento de plástico con tapas herméticas.",
+        "precio": 12.99,
+        "imagen": "",
+        "categoria":"almacenamiento"
+      },
+      {
+        "id":9,
+        "nombre": "Molinillo de café",
+        "descripcion": "Molinillo de café eléctrico con múltiples ajustes de molido.",
+        "precio": 34.99,
+        "imagen": "",
+        "categoria":"artefactos"
+      }
+    ]
+ }

@@ -1,26 +1,36 @@
 import React from "react";
-import { useFetch } from "../hooks/useFetch";
 import { Item } from "./Item";
-import { Box } from "@mui/material";
+import {Box}   from "@mui/material";
 
-export const ItemList = () => {
-  const productos = useFetch("https://fakestoreapi.com/products");
 
-  console.log(productos);
-  return productos.map((producto) => {
-    
-    return (
-      <>
-        
-          <Item
-            key={producto.id}
-            title={producto.title}
-            description={producto.description}
-            image={producto.image}
-            count={producto.rating.count}
-          />
-        
-      </>
-    );
-  });
+export const ItemList = ({products}) => {
+ 
+
+  return (
+    <>
+    <Box
+        sx={{
+          mt: 10,
+          maxWidth: "90vw",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent:"space-around",
+          flexWrap: "wrap",
+        }}
+      >
+       {products.map((producto) => (
+        <Item
+          key={producto.id}
+          id={producto.id}
+          title={producto.nombre}
+          image={producto.imagen}
+          count={producto.cantidad}
+          price={producto.precio}
+        />
+      ))}
+       
+      </Box>
+      
+    </>
+  );
 };

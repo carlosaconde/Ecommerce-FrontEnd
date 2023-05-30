@@ -12,8 +12,9 @@ import MenuItem from "@mui/material/MenuItem";
 import { useState } from "react";
 import { CartWidget } from "./CartWidget";
 import { theme } from "../ui/styles";
+import { Link, Link as RouterLink } from "react-router-dom";
 
-const pages = ["Productos", "Nosotros", "Contacto"];
+const pages = ["vajilla", "utensilios", "almacenamiento","artefactos"];
 
 export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -103,14 +104,18 @@ export const NavBar = () => {
           >
             Tienda Kurama
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{ ml: 30, flexGrow: 1, display: { xs: "none", md: "flex" } }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ ml: 15, color: "white", display: "block" }}
+                sx={{ ml: 1, color: "white", display: "block" }}
               >
-                {page}
+                <Link component={RouterLink} to={`/category/${page}`}>
+                  {page}
+                </Link>
               </Button>
             ))}
           </Box>
