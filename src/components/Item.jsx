@@ -9,7 +9,7 @@ import { Link, Link as RouterLink } from "react-router-dom";
 
 export const Item=({id,image,title,count,price}) =>{
   return (
-    <Card  sx={{ mt:3,maxWidth: 250,height:550 }}>
+    <Card  sx={{ m:3,maxWidth: 250,height:450 }}>
       <CardMedia
         component="img"
         sx={{ width: 240 ,height: 240 ,backgroundSize:'contain'}}

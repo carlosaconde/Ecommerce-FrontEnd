@@ -4,9 +4,23 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { ItemCount } from './ItemCount';
+import { CartContext } from '../context/CartContext';
+import { useContext } from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
-export const ItemDetail=({imagen,nombre,descripcion,cantidad,precio}) =>{
+export const ItemDetail=({id,imagen,nombre,descripcion,cantidad,precio}) =>{
   
+  const {addItem}=useContext(CartContext);
+  const [item, setItem] = useState({})
+ 
+  const onAdd=(quantity)=>{
+    addItem(item,quantity);
+  }
+
+  useEffect(()=>{
+    setItem({id,imagen,nombre,descripcion,cantidad,precio});
+  },[id,imagen,nombre,descripcion,cantidad,precio])
   
   return (
     <Card  sx={{ m:5 ,maxWidth: 250,height:600 }}>
@@ -31,7 +45,11 @@ export const ItemDetail=({imagen,nombre,descripcion,cantidad,precio}) =>{
         <Typography variant="body2" color="text.secondary">
          precio : {precio}
         </Typography>
-        <ItemCount count={cantidad}  />
+         
+          <ItemCount stock={cantidad} onAdd={onAdd}/>
+      
+      
+        
       </CardContent>
       
     </Card>

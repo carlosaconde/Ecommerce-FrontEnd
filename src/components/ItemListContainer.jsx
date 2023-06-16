@@ -1,56 +1,47 @@
 import React from "react";
 import { ItemList } from "./ItemList";
 import { Box } from "@mui/material";
-import { useState,useEffect } from "react";
-import { getProducts,getProductByCategory } from "../asyncMock";
+import { useState, useEffect } from "react";
+// import { getProducts,getProductByCategory } from "../asyncMock";
 import { useParams } from "react-router-dom";
-
-
+import { collection, getDocs, where, query } from "firebase/firestore";
+import { db } from "../firebase/config";
 
 export const ItemListContainer = ({ greetings }) => {
-    const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([]);
 
-  const { category } = useParams()
+  const { category } = useParams();
 
-  useEffect(()=>{
-    const asyncFunc = category? getProductByCategory : getProducts
-  
-      asyncFunc(category)
-      .then(response=>{
-        setProducts(response)
+  useEffect(() => {
+    const collectionRef = category
+      ? query(collection(db, "productos"), where("categoria", "==", category))
+      : collection(db, "productos");
+
+    getDocs(collectionRef)
+      .then((response) => {
+        const dataProducts = response.docs.map((item) => {
+          const data = item.data();
+          return { id: item.id, ...data };
+        });
+        setProducts(dataProducts);
       })
-      .catch(error=>{
-        console.error(error)
-      })
-  },[category])
-
-
-    useEffect(() => {
-      getProducts()
-         .then(response => {
-          setProducts(response)
-         })
-         .catch(error => {
-          console.error(error);
-         })
-    
-      
-    }, [])
-    
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [category]);
 
   return (
     <>
       <Box
         sx={{
           mt: 10,
-          maxWidth: "90vw",
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
+          maxWidth: "100vw",
+          display: "grid",
+          justifyItems:'center',
+        
         }}
       >
-       
-        <ItemList  products={products}/>
+        <ItemList products={products} />
       </Box>
     </>
   );

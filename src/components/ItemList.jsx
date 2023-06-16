@@ -10,16 +10,16 @@ export const ItemList = ({products}) => {
     <>
     <Box
         sx={{
-          mt: 10,
-          maxWidth: "90vw",
+          mt: 5,
+          maxWidth: "100vw",
           display: "flex",
           flexDirection: "row",
-          justifyContent:"space-around",
+          justifyContent:'center',
           flexWrap: "wrap",
         }}
       >
        {products.map((producto) => (
-        <Item
+        <Item 
           key={producto.id}
           id={producto.id}
           title={producto.nombre}
