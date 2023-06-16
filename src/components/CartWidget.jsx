@@ -11,10 +11,10 @@ export const CartWidget = () => {
   const { cartTotal } = useContext(CartContext);
 
   return (
-    <Link to={'/cart'}>
-    <Badge badgeContent={cartTotal()} color="error">
-      <ShoppingCartIcon  color="action" />
-    </Badge>
+    <Link to={"/cart"}>
+      <Badge badgeContent={cartTotal()} color="error">
+        <ShoppingCartIcon color="action" />
+      </Badge>
     </Link>
   );
 };

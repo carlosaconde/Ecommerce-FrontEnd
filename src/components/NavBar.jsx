@@ -14,7 +14,7 @@ import { CartWidget } from "./CartWidget";
 import { theme } from "../ui/styles";
 import { Link, Link as RouterLink } from "react-router-dom";
 
-const pages = ["vajilla", "utensilios", "almacenamiento","artefactos"];
+const pages = ["vajilla", "utensilios", "almacenamiento", "artefactos"];
 
 export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);

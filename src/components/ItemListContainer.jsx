@@ -2,7 +2,6 @@ import React from "react";
 import { ItemList } from "./ItemList";
 import { Box } from "@mui/material";
 import { useState, useEffect } from "react";
-// import { getProducts,getProductByCategory } from "../asyncMock";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../firebase/config";
@@ -37,8 +36,7 @@ export const ItemListContainer = ({ greetings }) => {
           mt: 10,
           maxWidth: "100vw",
           display: "grid",
-          justifyItems:'center',
-        
+          justifyItems: "center",
         }}
       >
         <ItemList products={products} />
