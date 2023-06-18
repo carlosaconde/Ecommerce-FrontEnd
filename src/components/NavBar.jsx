@@ -80,7 +80,10 @@ export const NavBar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link  component={RouterLink} to={`/category/${page}`}>
+                  {page}
+                </Link>
+                  
                 </MenuItem>
               ))}
             </Menu>
