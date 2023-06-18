@@ -79,12 +79,12 @@ export const NavBar = () => {
               }}
             >
               {pages.map((page) => (
-                <Button key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Link  component={RouterLink} to={`/category/${page}`}>
                   {page}
                 </Link>
                   
-                 </Button>
+                 </MenuItem>
               ))}
             </Menu>
           </Box>
