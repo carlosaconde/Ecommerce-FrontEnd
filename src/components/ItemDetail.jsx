@@ -18,6 +18,7 @@ export const ItemDetail = ({
   precio,
 }) => {
   const { addItem } = useContext(CartContext);
+  
   const [item, setItem] = useState({});
 
   const onAdd = (quantity) => {
@@ -44,7 +45,7 @@ export const ItemDetail = ({
           {descripcion}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          cantidad : {cantidad}
+          cantidad : {item.cantidad}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           precio : {precio}

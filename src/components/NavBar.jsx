@@ -113,7 +113,7 @@ export const NavBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ ml: 1, color: "white", display: "block" }}
               >
-                <Link component={RouterLink} to={`/category/${page}`}>
+                <Link  component={RouterLink} to={`/category/${page}`}>
                   {page}
                 </Link>
               </Button>

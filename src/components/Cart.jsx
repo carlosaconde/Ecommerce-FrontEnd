@@ -50,8 +50,8 @@ export const Cart = () => {
         ))}
 
         <Typography>Total de su compra: {totalCompra} </Typography>
-        <Button>
-          <Link to={"/checkout"}> Finalizar Compra</Link>
+        <Button href="/checkout"> Finalizar Comprra
+          {/* <Link to={"/checkout"}> Finalizar Compra</Link> */}
         </Button>
 
         <Button onClick={clearCart}> Vaciar Carrito </Button>

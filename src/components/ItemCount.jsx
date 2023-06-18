@@ -7,20 +7,27 @@ import { useCounter } from "../hooks/useCounter";
 import { theme } from "../ui/styles";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export const ItemCount = ({ stock, onAdd }) => {
+  const [itemStock, setItemStock] = useState(stock)
   const { counter, increment, decrement, reset } = useCounter({
     initialvalue: 1,
     stock: stock,
   });
   const [itemAded, setItemAded] = useState(false);
-  const addToCart = () => {
-    if (counter <= stock) {
-      reset();
+   const addToCart = () => {
+    if (counter <= itemStock) {
+      setItemStock(itemStock-counter)
       setItemAded(true);
       onAdd(counter);
+      reset();
     }
   };
+
+  useEffect(()=>{
+    setItemStock(stock);
+  },[stock])
 
   return (
     <Box
@@ -28,7 +35,6 @@ export const ItemCount = ({ stock, onAdd }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        // border: "1px solid gray",
         width: 200,
       }}
     >
