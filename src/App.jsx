@@ -13,9 +13,9 @@ import { Checkout } from "./components/Checkout";
 
 function App() {
   return (
-    <>
+    <><CartProvider>
       <BrowserRouter>
-        <CartProvider>
+        
           <NavBar />
           <Routes>
             <Route path="/cart" element={<Cart />} />
@@ -25,8 +25,8 @@ function App() {
             <Route path="*" element={<h1>404 NOT FOUND</h1>} />
             <Route path="/checkout" element={<Checkout />} />
           </Routes>
-        </CartProvider>
-      </BrowserRouter>
+          </BrowserRouter>
+      </CartProvider>
 
       <Box
         sx={{
@@ -42,6 +42,8 @@ function App() {
       </Box>
 
       <Footer />
+      
+      
     </>
   );
 }
